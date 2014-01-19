@@ -1,0 +1,12 @@
+.media-object{
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+	border-radius: 20px;
+	float: left;
+}
+
+.text-left{
+	text-align: left;
+
+}

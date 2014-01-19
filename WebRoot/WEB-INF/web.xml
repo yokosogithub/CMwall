@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name></display-name>
+
+	<servlet>
+		<servlet-name>MainServlet</servlet-name>
+		<servlet-class>org.servlet.MainServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MainServlet</servlet-name>
+		<url-pattern>/servlet/MainServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>SetFreshTime2ZeroServlet</servlet-name>
+		<servlet-class>org.servlet.SetFreshTime2ZeroServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetFreshTime2ZeroServlet</servlet-name>
+		<url-pattern>SetFreshTime2ZeroServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>DianZanServlet</servlet-name>
+		<servlet-class>org.servlet.DianZanServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DianZanServlet</servlet-name>
+		<url-pattern>DianZanServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>QueryZanCountServlet</servlet-name>
+		<servlet-class>org.servlet.QueryZanCountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryZanCountServlet</servlet-name>
+		<url-pattern>QueryZanCountServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>QueryUserInfo</servlet-name>
+		<servlet-class>org.servlet.QueryUserInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryUserInfo</servlet-name>
+		<url-pattern>QueryUserInfo</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>UpdateUserInfo</servlet-name>
+		<servlet-class>org.servlet.UpdateUserInfo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateUserInfo</servlet-name>
+		<url-pattern>UpdateUserInfo</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>QueryAllServlet</servlet-name>
+		<servlet-class>org.servlet.QueryAllServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryAllServlet</servlet-name>
+		<url-pattern>QueryAllServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>QueryReplyCountServlet</servlet-name>
+		<servlet-class>org.servlet.QueryReplyCountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryReplyCountServlet</servlet-name>
+		<url-pattern>QueryReplyCountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QueryReplyServlet</servlet-name>
+		<servlet-class>org.servlet.QueryReplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryReplyServlet</servlet-name>
+		<url-pattern>QueryReplyServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddReplyServlet</servlet-name>
+		<servlet-class>org.servlet.AddReplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddReplyServlet</servlet-name>
+		<url-pattern>AddReplyServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>MyLuanchServlet</servlet-name>
+		<servlet-class>org.servlet.MyLuanchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyLuanchServlet</servlet-name>
+		<url-pattern>MyLuanchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QueryMyMsgServlet</servlet-name>
+		<servlet-class>org.servlet.QueryMyMsgServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryMyMsgServlet</servlet-name>
+		<url-pattern>QueryMyMsgServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateIconAndNickServlet</servlet-name>
+		<servlet-class>org.servlet.UpdateIconAndNickServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateIconAndNickServlet</servlet-name>
+		<url-pattern>UpdateIconAndNickServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QueryTopicServlet</servlet-name>
+		<servlet-class>org.servlet.QueryTopicServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryTopicServlet</servlet-name>
+		<url-pattern>QueryTopicServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>TopicLuanchServlet</servlet-name>
+		<servlet-class>org.servlet.TopicLuanchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TopicLuanchServlet</servlet-name>
+		<url-pattern>TopicLuanchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QueryAnsServlet</servlet-name>
+		<servlet-class>org.servlet.QueryAnsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryAnsServlet</servlet-name>
+		<url-pattern>QueryAnsServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VoteAnsServlet</servlet-name>
+		<servlet-class>org.servlet.VoteAnsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VoteAnsServlet</servlet-name>
+		<url-pattern>VoteAnsServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>QueryTopicReplyServlet</servlet-name>
+		<servlet-class>org.servlet.QueryTopicReplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QueryTopicReplyServlet</servlet-name>
+		<url-pattern>QueryTopicReplyServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddTopicReplyServlet</servlet-name>
+		<servlet-class>org.servlet.AddTopicReplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddTopicReplyServlet</servlet-name>
+		<url-pattern>AddTopicReplyServlet</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>ImgUploadServlet</servlet-name>
+		<servlet-class>org.servlet.ImgUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImgUploadServlet</servlet-name>
+		<url-pattern>/servlet/ImgUploadServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>testservlet</servlet-name>
+		<servlet-class>com.baidu.bae.test.TestServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>testservlet</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
