@@ -33,6 +33,7 @@ public class QueryUserInfo extends HttpServlet  {
 			String sql = "select * from tb_member where open_id ='"+currentID+"'";
 			Statement stm = connection.createStatement();
 			ResultSet rs = stm.executeQuery(sql);
+<<<<<<< HEAD
 			
 			if( !rs.next() ){
 				out.print("error");
@@ -74,6 +75,37 @@ public class QueryUserInfo extends HttpServlet  {
 				out.flush();
 				out.close();
 			}
+=======
+			rs.next();
+			
+			String iconURL = rs.getString("icon_url");
+			String weixinID = rs.getString("weixin_id");
+			String hobby = rs.getString("hobby");
+			String school = rs.getString("school");
+			String shuoshuo = rs.getString("shuoshuo");
+			String weixinNum = rs.getString("weixin_num");
+			int sex = rs.getInt("sex");
+			
+			// 将信息封装至一个用户信息对象里
+			UserInfo userInfo = new UserInfo();
+			userInfo.setIconURL(iconURL);
+			userInfo.setWeixinID(weixinID);
+			userInfo.setHobby(hobby);
+			userInfo.setSchool(school);
+			userInfo.setShuoshuo(shuoshuo);
+			userInfo.setWeixinNum(weixinNum);
+			userInfo.setSex(sex);
+			// 将用户信息对象转换为json对象
+			JSONArray json = JSONArray.fromObject(userInfo);
+			
+			rs.close();
+			stm.close();
+			connection.close();
+			
+			out.print(json);
+			out.flush();
+			out.close();
+>>>>>>> remotes/CMwall/master
 			
 		}catch (Exception e) {
 			out.print("error");

@@ -26,6 +26,7 @@ public class MyLuanchServlet extends HttpServlet {
 		String currentID = request.getParameter("currentID");
 		String content = request.getParameter("content");
 		String description = request.getParameter("description");
+<<<<<<< HEAD
 		String locationLabel = request.getParameter("locationLabel");
 		int type = Integer.valueOf(request.getParameter("type")); // 1:表白 2：许愿 3：留言
 		
@@ -33,6 +34,10 @@ public class MyLuanchServlet extends HttpServlet {
 			locationLabel = "附近";
 		}
 		
+=======
+		int type = Integer.valueOf(request.getParameter("type")); // 1:表白 2：许愿 3：留言
+		
+>>>>>>> remotes/CMwall/master
 		// 连接数据库
 		Connection connection = null;
 		JSPConnectDB jspConnectDB = new JSPConnectDB();
@@ -53,8 +58,13 @@ public class MyLuanchServlet extends HttpServlet {
 			stm1.close();
 			
 			// 将此条msg插入数据库
+<<<<<<< HEAD
 			String sql2 = " insert into tb_msg (open_id,weixin_id,icon_url,sex,content,description,type,locationx,locationy,location_label)" +
 					" values ( '"+currentID+"','"+weixinID+"','"+iconURL+"',"+sex+",'"+content+"','"+description+"',"+type+","+locationX+","+locationY+",'"+locationLabel+"' ) ";
+=======
+			String sql2 = " insert into tb_msg (open_id,weixin_id,icon_url,sex,content,description,type,locationx,locationy)" +
+					" values ( '"+currentID+"','"+weixinID+"','"+iconURL+"',"+sex+",'"+content+"','"+description+"',"+type+","+locationX+","+locationY+" ) ";
+>>>>>>> remotes/CMwall/master
 			Statement stm2 = connection.createStatement();
 			stm2.execute(sql2);
 			stm2.close();

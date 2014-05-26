@@ -28,8 +28,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	%>
 	
 	<body style="font-family:'Microsoft YaHei';text-align:center">
+<<<<<<< HEAD
 		<textarea id='currentID' style='visibility:hidden;display:none' ><%=currentID%></textarea>
 	
+=======
+>>>>>>> remotes/CMwall/master
        <div class="container">
        	  <div class="row" style="margin-top:1em">
        	  	<header>
@@ -44,7 +47,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        	  	 		<div class="col-xs-8" style="margin-top:0.6em">
        	  	 		    <div class="input-group" style="margin-top:1em">
 							<span class="input-group-addon" id="sex_icon" style="color:#d9534f"><span class="glyphicon glyphicon-user">昵称</span></span>
+<<<<<<< HEAD
 							<input id="input_nickname" type="text" class="form-control" size="15"></input>
+=======
+							<input id="input_nickname" type="text" class="form-control" size="15" value="unknown"></input>
+>>>>>>> remotes/CMwall/master
 						</div> 
                 	</div>
                 	<div class="col-xs-2"></div>	
@@ -63,11 +70,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <ul class="dropdown-menu pull-right" role="menu">
 						    <li><a href="" onclick="$('#select_now').html('看电影 <span class=\'caret\'></span>');return false;">看电影</a></li>
 						    <li><a href="" onclick="$('#select_now').html('吃美食 <span class=\'caret\'></span>');return false;">吃美食</a></li>
+<<<<<<< HEAD
 						    <li><a href="" onclick="$('#select_now').html('闲聊 <span class=\'caret\'></span>');return false;">闲聊</a></li>
 						    <li><a href="" onclick="$('#select_now').html('逛街 <span class=\'caret\'></span>');return false;">逛街</a></li>
 						    <li><a href="" onclick="$('#select_now').html('上自习 <span class=\'caret\'></span>');return false;">上自习</a></li>
 						    <li><a href="" onclick="$('#select_now').html('约会 <span class=\'caret\'></span>');return false;">约会</a></li>
 						    <li><a href="" onclick="$('#select_now').html('运动 <span class=\'caret\'></span>');return false;">运动</a></li>
+=======
+						    <li><a href="" onclick="$('#select_now').html('逛街 <span class=\'caret\'></span>');return false;">逛街</a></li>
+						    <li><a href="" onclick="$('#select_now').html('上自习 <span class=\'caret\'></span>');return false;">上自习</a></li>
+						    <li><a href="" onclick="$('#select_now').html('约会 <span class=\'caret\'></span>');return false;">约会</a></li>
+>>>>>>> remotes/CMwall/master
 						    <li class="divider"></li>
 						  </ul>
 						</div>
@@ -80,6 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="input-group-addon" style="color:#d9534f"><span class="glyphicon glyphicon-book"></span> 学校</span>
 						  <input id="input_school" type="text" class="form-control" placeholder="你的大学"></input>
 						</div>
+<<<<<<< HEAD
 						
 						<div class="input-group" style="margin-top:0.3em">
 						  <span class="input-group-addon" style="color:#d9534f"><span class="glyphicon glyphicon-pencil"></span> 院系</span>
@@ -101,6 +115,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <input id="input_lovestate" type="text" class="form-control" placeholder="恋爱中/单身/保密"></input>
 						</div>
 						
+=======
+						<div class="input-group" style="margin-top:1em">
+							<span class="input-group-addon" style="color:#d9534f"><span class="glyphicon glyphicon-comment"></span> 说说</span>
+							<textarea  id="textarea_shuoshuo" class="form-control" rows="3" placeholder="你的个性签名"></textarea>
+						</div>
+>>>>>>> remotes/CMwall/master
 						<div class="input-group" style="margin-top:1em">
 							<span class="input-group-addon" style="color:#d9534f">微信号</span>
 							<input  id="input_weixinNum" type="text" class="form-control" placeholder="勾搭必备"></input>
@@ -117,12 +137,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<button type="button" id="btn_save" class="btn btn-success" style="float:left">保存</button>
 				</div>
 			</footer>
+<<<<<<< HEAD
 			<br>
 			
        	  </div>
        </div>
        
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+=======
+       	  </div>
+       </div>
+       
+       <script src="https://code.jquery.com/jquery.js"></script>   <!-- import JQuery library -->
+>>>>>>> remotes/CMwall/master
 	   <script src="js/bootstrap.min.js"></script>
 	   		
 	   <script>
@@ -133,6 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					alert("获取资料失败");
 				}else{
 					$.each(data,function(idx,item){
+<<<<<<< HEAD
 						if( item.hobby == '1' ){
 							$('#select_now').html('看电影 <span class=\'caret\'></span>');
 						}else if( item.hobby == '2' ){
@@ -154,6 +182,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						document.getElementById('input_school').value = item.school;
 						document.getElementById('input_profession').value = item.profession;
 						document.getElementById('input_grade').value = item.grade;
+=======
+						$('#img_icon').attr("src",item.iconURL);
+						document.getElementById('input_nickname').value = item.weixinID;
+						document.getElementById('input_school').value = item.school;
+>>>>>>> remotes/CMwall/master
 						document.getElementById('textarea_shuoshuo').innerHTML = item.shuoshuo;
 						document.getElementById('input_weixinNum').value = item.weixinNum;
 						var sex_color;
@@ -180,6 +213,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					hobby = 1;
 				}else if( hobbytext == "吃美食" ){
 					hobby = 2;
+<<<<<<< HEAD
 				}else if( hobbytext == "闲聊" ){
 					hobby = 3;
 				}else if( hobbytext == "逛街" ){
@@ -190,11 +224,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					hobby = 6;
 				}else if( hobbytext == "运动" ){
 					hobby = 7;
+=======
+				}else if( hobbytext == "逛街" ){
+					hobby = 3;
+				}else if( hobbytext == "上自习" ){
+					hobby = 4;
+				}else if( hobbytext == "约会" ){
+					hobby = 5;
+>>>>>>> remotes/CMwall/master
 				}
 				var school = $.trim( $('#input_school').val() );
 				var shuoshuo = $.trim( $('#textarea_shuoshuo').val() );
 				var weixinNum = $.trim( $('#input_weixinNum').val() );
 				
+<<<<<<< HEAD
 				var profession = $.trim( $('#input_profession').val() );
 				var grade = $.trim( $('#input_grade').val() );
 				var lovestate = $.trim( $('#input_lovestate').val() );
@@ -214,10 +257,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 				if( lovestate=="" ){
 					lovestate = '保密';
+=======
+				// 验证是否内容为空
+				if( weixinID=="" ){
+					alert('昵称不能为空');
+					return;
+				}
+				if( school=="" ){
+					school = '未填写';
+>>>>>>> remotes/CMwall/master
 				}
 				if( shuoshuo=="" ){
 					shuoshuo = '未填写';
 				}
+<<<<<<< HEAD
 				// 验证微信号码
 				if( weixinNum != "保密" ){
 					var reg=/^[\w\_\-]{6,20}$/;
@@ -235,6 +288,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						var currentID = document.getElementById('currentID').innerHTML;
 						alert('修改成功，请稍后查看');
 						window.location.href="http://2.cmwechatweb.duapp.com/mypage_scan.jsp?taOpenID="+currentID+"&ifSelf=true";
+=======
+				if( weixinNum=="" ){
+					weixinNum = '保密';
+				}
+				
+	
+				// 上传服务器保存
+				$.post("http://2.cmwechatweb.duapp.com/UpdateUserInfo",{currentID:<%=currentID%>, weixinID:weixinID, hobby:hobby, school:school, shuoshuo:shuoshuo, weixinNum:weixinNum},function(data){
+					if( data == 'error' ){
+						alert('网络不给力噢');
+					}else{
+						alert('修改成功，请稍后查看');
+						window.history.go(-1);
+>>>>>>> remotes/CMwall/master
 					}
 	
 				});

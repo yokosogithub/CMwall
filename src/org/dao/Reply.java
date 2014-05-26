@@ -16,8 +16,11 @@ public class Reply {
 	private String openID = null;
 	// 回复人的昵称
 	private String weixinID = null;
+<<<<<<< HEAD
 	// 回复人性别
 	private int sex;
+=======
+>>>>>>> remotes/CMwall/master
 	// 回复人头像
 	private String iconURL = null;
 	// 回复内容
@@ -25,6 +28,7 @@ public class Reply {
 	// 回复时间
 	private String createTime = null;
 
+<<<<<<< HEAD
 	
 	
 	public int getSex() {
@@ -35,6 +39,8 @@ public class Reply {
 		this.sex = sex;
 	}
 
+=======
+>>>>>>> remotes/CMwall/master
 	public int getReplyID() {
 		return replyID;
 	}

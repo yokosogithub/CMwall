@@ -26,8 +26,11 @@ import org.util.MessageUtil;
 import org.util.SignUtil;
 
 import org.util.Config;
+<<<<<<< HEAD
 import java.util.logging.Logger;
 import java.util.logging.Level;
+=======
+>>>>>>> remotes/CMwall/master
 
 // import com.baidu.bae.api.util.BaeEnv;
 
@@ -59,7 +62,10 @@ public class MainServlet extends HttpServlet {
 			out.print(echostr);
 		}
 		out.close();
+<<<<<<< HEAD
 		out.flush();
+=======
+>>>>>>> remotes/CMwall/master
 		out = null;	
 		
 	}
@@ -77,6 +83,7 @@ public class MainServlet extends HttpServlet {
 		// 调用核心业务类接收消息、处理消息
 		String respMessage = CoreService.processRequest(request,DBoprate.connDB(request));
 
+<<<<<<< HEAD
 		// 输出日志
 		// Logger logger = Logger. getLogger("name");
 		// logger.log(Level.INFO, " this is for notice log print \n" + respMessage );
@@ -88,6 +95,13 @@ public class MainServlet extends HttpServlet {
 		out.flush();
 		out.close();
 		out = null;	
+=======
+		
+		// 响应消息
+		PrintWriter out = response.getWriter();
+		out.flush();
+		out.close();
+>>>>>>> remotes/CMwall/master
 		
 		// 每次请求开始连接数据库，单次响应完毕后关闭数据库
 		DBoprate.disConnDB();

@@ -53,14 +53,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<body style="font-family:'Microsoft YaHei';text-align:center">
 		<!-- 保存当前状态发送人的openid -->
 		<textarea id='taOpenID' style='visibility:hidden;display:none' ><%=taOpenID%></textarea>
+<<<<<<< HEAD
 		<textarea id='iconURL' style='visibility:hidden;display:none' ><%=iconURL%></textarea>
+=======
+>>>>>>> remotes/CMwall/master
 	
        <div class="container">
        	  <div class="row" style="margin-top:1em"> 
        	  	<header>
        	  	    <div class="row">
        	  	    	<div class="col-xs-12" style="padding:0;text-align:center">
+<<<<<<< HEAD
        	  	    		<img id="head_icon" alt="" src="" class="img-circle img-responsive" style="width:150px;height:150px;margin:auto;box-shadow: 0px 0px 2px 6px rgba(255, 255, 255, 0.7),0px 0px 30px 2px rgba(0, 0, 0, 0.25);">
+=======
+       	  	    		<img id="head_icon" alt="http://bcs.duapp.com/cmtechnology-wechat-cmwall-files/image%2Ficon_out_of_date.jpg" src=<%=iconURL%> class="img-circle img-responsive" style="width:150px;height:150px;margin:auto;box-shadow: 0px 0px 2px 6px rgba(255, 255, 255, 0.7),0px 0px 30px 2px rgba(0, 0, 0, 0.25);">
+>>>>>>> remotes/CMwall/master
        	  	        </div>
        	  	        <i style='color:<%=sex_color%>;margin-top:20px' class='glyphicon glyphicon-user'  ></i>
        	  	    </div>
@@ -165,7 +172,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <h4 class="modal-title" id="myModalLabel">预览</h4>
 			  </div>
 			  <div class="modal-body" style="padding-bottom:10px">
+<<<<<<< HEAD
 			     <img id="img_modal_show" src="" class="img-responsive" style="border-radius:10px"></img>
+=======
+			     <img src=<%=iconURL%> class="img-responsive" style="border-radius:10px"></img>
+>>>>>>> remotes/CMwall/master
 			  </div>
 			</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -174,6 +185,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 <script>
 
+<<<<<<< HEAD
 	// 更新最新头像以及昵称
 	$.get("http://2.cmwechatweb.duapp.com/UpdateIconAndNickServlet",{taOpenID:'<%=taOpenID%>'},function(data){
 		if( data == 'error' ){
@@ -190,6 +202,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 	});
 
+=======
+>>>>>>> remotes/CMwall/master
 	// 点击进入个人主页
 	$('#btn_weixinID').click(function(){
 		var taOpenID = $.trim( $('#taOpenID').val() );
@@ -248,6 +262,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		function(data){  //加载success后的回调函数
 	   		 $.each(data,function(idx,item) 
 	   		 {
+<<<<<<< HEAD
 	   		 	var sex_color;
 		  		  if(item.sex==1){
 			  		 sex_color="#66CCFF";
@@ -259,11 +274,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   		   $('#reply_list').append("<div class='media media-feed'>"+
 					"<div class='pull-left'>"+
 						"<img id='replylist_headicon' class='media-object' src="+item.iconURL+" value="+item.openID+">"+
+=======
+	   		   $('#reply_list').append("<div class='media media-feed'>"+
+					"<div class='pull-left'>"+
+						"<img class='media-object' src="+item.iconURL+">"+
+>>>>>>> remotes/CMwall/master
 						"<br>"+
 						"<button type='submit' class='btn btn-success btn-xs' id='son_reply' style='margin-top:10px;margin-bottom:10px' value='"+item.replyID+"'>回复Ta</button>"+
 					    "</div>"+
 					    "<div class='media-body'>"+
+<<<<<<< HEAD
 						"<h4 class='media-heading text-left' style='color:"+sex_color+"'>"+item.weixinID+"</h4>"+
+=======
+						"<h4 class='media-heading text-left' style='color:#FF2408'>"+item.weixinID+"</h4>"+
+>>>>>>> remotes/CMwall/master
 						"<p class='excerpt text-left'>"+item.content+"</p>"+
 						"<h6 style='float:right'>"+item.createTime+"</h6>"+
 					"</div>"+
@@ -309,6 +333,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  					
 		   		 			$.each(data,function(idx,item) 
 		   					{
+<<<<<<< HEAD
 		   						var sex_color;
 					  		    if(item.sex==1){
 						  		   sex_color="#66CCFF";
@@ -320,11 +345,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   		 				$('#reply_list').append("<div class='media media-feed'>"+
 								"<div class='pull-left'>"+
 								"<img id='replylist_headicon' class='media-object' src="+item.iconURL+" value="+item.openID+">"+
+=======
+		   						// 后台获取成功,重新加载新的回复至前端
+		   		 				$('#reply_list').append("<div class='media media-feed'>"+
+								"<div class='pull-left'>"+
+								"<img class='media-object' src="+item.iconURL+">"+
+>>>>>>> remotes/CMwall/master
 								"<br>"+
 								"<button type='submit' class='btn btn-success btn-xs' id='son_reply' style='margin-top:10px;margin-bottom:10px' value='"+item.replyID+"'>回复Ta</button>"+
 								"</div>"+
 								"<div class='media-body'>"+
+<<<<<<< HEAD
 								"<h4 class='media-heading text-left' style='color:"+sex_color+"'>"+item.weixinID+"</h4>"+
+=======
+								"<h4 class='media-heading text-left' style='color:#FF2408'>"+item.weixinID+"</h4>"+
+>>>>>>> remotes/CMwall/master
 								"<p class='excerpt text-left'>"+item.content+"</p>"+
 								"<h6 style='float:right'>"+item.createTime+"</h6>"+
 								"</div>"+
@@ -388,6 +423,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  					
 		   		 			$.each(data,function(idx,item) 
 		   					{
+<<<<<<< HEAD
 		   						var sex_color;
 					  		    if(item.sex==1){
 						  		   sex_color="#66CCFF";
@@ -399,11 +435,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   		 				$('#reply_list').append("<div class='media media-feed'>"+
 								"<div class='pull-left'>"+
 								"<img id='replylist_headicon' class='media-object' src="+item.iconURL+" value="+item.openID+">"+
+=======
+		   						// 后台获取成功,重新加载新的回复至前端
+		   		 				$('#reply_list').append("<div class='media media-feed'>"+
+								"<div class='pull-left'>"+
+								"<img class='media-object' src="+item.iconURL+">"+
+>>>>>>> remotes/CMwall/master
 								"<br>"+
 								"<button type='submit'  class='btn btn-success btn-xs' id='son_reply' style='margin-top:10px;margin-bottom:10px' value='"+item.replyID+"'>回复Ta</button>"+
 								"</div>"+
 								"<div class='media-body'>"+
+<<<<<<< HEAD
 								"<h4 class='media-heading text-left' style='color:"+sex_color+"'>"+item.weixinID+"</h4>"+
+=======
+								"<h4 class='media-heading text-left' style='color:#FF2408'>"+item.weixinID+"</h4>"+
+>>>>>>> remotes/CMwall/master
 								"<p class='excerpt text-left'>"+item.content+"</p>"+
 								"<h6 style='float:right'>"+item.createTime+"</h6>"+						
 								"</div>"+
@@ -444,6 +490,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   $('#img_modal').modal('show');
 		});
 	
+<<<<<<< HEAD
 	
 		// 点击回复列表头像查看个人主页
 		$("#replylist_headicon").live("click",function(){
@@ -451,6 +498,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			window.location.href="http://2.cmwechatweb.duapp.com/mypage_scan.jsp?taOpenID='"+taOpenID+"'&ifSelf=false";
 		});
 			
+=======
+  		
+>>>>>>> remotes/CMwall/master
   	});
 
 </script>

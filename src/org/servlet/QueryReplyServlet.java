@@ -61,7 +61,10 @@ public class QueryReplyServlet extends HttpServlet {
 					}
 					// 该回复的昵称以及头像
 					reply.setWeixinID(rs2.getString("weixin_id"));
+<<<<<<< HEAD
 					reply.setSex(rs2.getInt("sex"));
+=======
+>>>>>>> remotes/CMwall/master
 					reply.setIconURL(rs2.getString("icon_url"));
 
 					rs2.close();
@@ -146,7 +149,10 @@ public class QueryReplyServlet extends HttpServlet {
 				rs2.next();
 				// 设置该回复的昵称以及头像
 				reply.setWeixinID(rs2.getString("weixin_id"));
+<<<<<<< HEAD
 				reply.setSex(rs2.getInt("sex"));
+=======
+>>>>>>> remotes/CMwall/master
 				reply.setIconURL(rs2.getString("icon_url"));
 				rs2.close();
 				stm2.close();
@@ -164,6 +170,7 @@ public class QueryReplyServlet extends HttpServlet {
 					// 如果是子回复
 					// 查询该条回复对应父回复的回复人
 					Statement stm3 = connection.createStatement();
+<<<<<<< HEAD
 					String sql3 = "select * from tb_member where open_id = (select open_id from tb_reply where reply_id="+ fatherReplyID + ")";
 					ResultSet rs3 = stm3.executeQuery(sql3);
 					String weixinID;
@@ -174,6 +181,16 @@ public class QueryReplyServlet extends HttpServlet {
 					}
 
 					reply.setContent("回复" + weixinID + "："+ rs1.getString("content"));
+=======
+					String sql3 = "select * from tb_member where open_id = (select open_id from tb_reply where reply_id="
+							+ fatherReplyID + ")";
+					ResultSet rs3 = stm3.executeQuery(sql3);
+					rs3.next();
+					String weixinID = rs3.getString("weixin_id");
+
+					reply.setContent("回复" + weixinID + "："
+							+ rs1.getString("content"));
+>>>>>>> remotes/CMwall/master
 				}
 				// 获取该条回复的回复时间
 				Timestamp time = rs1.getTimestamp("create_time");

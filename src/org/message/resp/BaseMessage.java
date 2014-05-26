@@ -15,6 +15,11 @@ public class BaseMessage {
 	private long CreateTime;
 	// 消息类型（text/music/news）
 	private String MsgType;
+<<<<<<< HEAD
+=======
+	// 位0x0001被标志时，星标刚收到的消息
+	private int FuncFlag;
+>>>>>>> remotes/CMwall/master
 
 	public String getToUserName() {
 		return ToUserName;
@@ -48,5 +53,15 @@ public class BaseMessage {
 		MsgType = msgType;
 	}
 
+<<<<<<< HEAD
+=======
+	public int getFuncFlag() {
+		return FuncFlag;
+	}
+
+	public void setFuncFlag(int funcFlag) {
+		FuncFlag = funcFlag;
+	}
+>>>>>>> remotes/CMwall/master
 }
 

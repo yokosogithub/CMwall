@@ -34,8 +34,11 @@ public class QueryAllServlet extends HttpServlet {
 		}
 		
 		out.print(jArr);
+<<<<<<< HEAD
 		out.flush();
 		out.close();
+=======
+>>>>>>> remotes/CMwall/master
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

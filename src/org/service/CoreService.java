@@ -9,15 +9,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+=======
+>>>>>>> remotes/CMwall/master
 import javax.servlet.http.HttpServletRequest;
 
 import net.sf.json.JSONArray;
 
 import org.dao.Biaobai;
+<<<<<<< HEAD
 import org.dao.StaticUserInfo;
+=======
+>>>>>>> remotes/CMwall/master
 import org.dboprate.DBoprate;
 import org.message.resp.NewsMessage;
 import org.message.resp.TextMessage;
@@ -37,12 +43,19 @@ public class CoreService {
 	 * 
 	 * @param request
 	 * @return
+<<<<<<< HEAD
 	 * @throws Exception 
+=======
+>>>>>>> remotes/CMwall/master
 	 */
 	public static String processRequest(HttpServletRequest request, boolean DPconnOk) {
 		// 公众号返回给用户的消息
 		String respMessage = null;
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> remotes/CMwall/master
 		try {
 			// 默认返回的文本消息内容
 			String respContent = "喔偶，网络不给力，稍后再试试吧〜";
@@ -56,17 +69,27 @@ public class CoreService {
 			String toUserName = requestMap.get("ToUserName");
 			// 消息类型
 			String msgType = requestMap.get("MsgType");
+<<<<<<< HEAD
 			
+=======
+>>>>>>> remotes/CMwall/master
 
 			// 回复文本消息
 			TextMessage textMessage = new TextMessage();
 			textMessage.setToUserName(fromUserName);
 			textMessage.setFromUserName(toUserName);
+<<<<<<< HEAD
 			//textMessage.setCreateTime(new Date().getTime());
 			long time = 114311124;
 			textMessage.setCreateTime(time);
 			textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
 			
+=======
+			textMessage.setCreateTime(new Date().getTime());
+			textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
+			textMessage.setFuncFlag(0);
+
+>>>>>>> remotes/CMwall/master
 			// sql语句
 			String sql = "";
 			// 存放查询结果
@@ -76,6 +99,7 @@ public class CoreService {
 
 			// 如果数据库成功连接
 			if (DPconnOk) {
+<<<<<<< HEAD
 				
 				// ////////////////////////////////////////////////// 事件推送 ///////////////////////////////////////////////////////
 				if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {
@@ -102,6 +126,19 @@ public class CoreService {
 					
 					String reqContent = requestMap.get("Content");
 					
+=======
+
+				// ////////////////////////////////////////////////// 文本消息 ///////////////////////////////////////////////////////
+				if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
+					// respContent = "您发送的是文本消息！";
+					String reqContent = requestMap.get("Content");
+					/*
+					 * 一、如果会员用户数据库中没有该用户的OPEN ID 1.如果临时表中也没有改用户OPEN ID
+					 * 将此条文字消息视为微信号存入临时表，并要求性别 2.如果临时表中存在该OPEN ID
+					 * (1)如果该条消息为“mm”或 “gg”，则填入sex属性，并要求头像 (2)如果该条消息不为“mm”或
+					 * “gg”，要求性别 3.如果临时表中存在该OPEN ID && 性别不为空 要求图片头像
+					 */
+>>>>>>> remotes/CMwall/master
 					sql = "select * from tb_member where open_id ='"+ fromUserName + "' ";
 					rs = DBoprate.stmt.executeQuery(sql);
 					// 如果会员表中没有该用户openid
@@ -149,20 +186,41 @@ public class CoreService {
 
 								respContent = "头像设置成功，今后直接回复图片即可修改头像"
 										+ "\n---------------\n"
+<<<<<<< HEAD
 										+ "请点击输入框旁小加号，将您的位置发送给小厘，参与附近新鲜玩法";
+=======
+										+ "请点击输入框旁小加号，将您的位置发送给小厘吧~";
+>>>>>>> remotes/CMwall/master
 
 							} else {
 								respContent = "请正确回复性别，“mm”为女，“gg”为男。\n若已设置成功，请回复一张头像吧~\n（若您的网络不佳，可以回复“默认”使用随机精美头像）";
 							}
 						}
 					}
+<<<<<<< HEAD
 					
+=======
+
+					/*
+					 * 二。如果会员用户数据库中有该用户open id && 该用户的locationX和locationY不为空
+					 * 1.如果为“表白墙” 服务器返回附近表白列表 2.如果为“心愿墙” 服务器返回 3.如果为“发表白”
+					 * 要求语音或文字表白，将state置为1 4.如果为“许愿望” && sex为女
+					 * 要求语音或文字愿望，将state置为2 5.如果为其他内容
+					 * (1)如果该用户state为1或2，将该条文字消息存入表白或心愿库，并将state置为0
+					 * (2)如果该用户state为0，提示输入“表白墙” “心愿墙” “发表白” “发心愿”
+					 */
+					/*
+					 * 三。如果会员用户数据库中有该用户open id && 该用户对应的locationX和locationY为空
+					 * 提示“没有位置，臣妾做不到呀”
+					 */
+>>>>>>> remotes/CMwall/master
 
 					// 如果会员表中有该openid
 					else {
 						sql = "select * from tb_member where open_id ='"+fromUserName+"' ";
 						rs = DBoprate.stmt.executeQuery(sql);
 						rs.next();
+<<<<<<< HEAD
 						///////////////////////// 取出该用户的信息并存入全局单例对象中 /////////////////////////
 						String openID = rs.getString("open_id");
 						String weixinID = rs.getString("weixin_id");
@@ -185,6 +243,10 @@ public class CoreService {
 						//StaticUserInfo.initInstance(openID, weixinID, iconURL, sex, state, locationx, locationy, locationLabel, hobby, school, profession, grade, shuoshuo, loveState, weixinNum, lastOuyuDate, ouyuTime);
 						
 						
+=======
+						double locationx = rs.getDouble("locationx");
+						double locationy = rs.getDouble("locationy");
+>>>>>>> remotes/CMwall/master
 						if (locationy < 1.0) {
 							respContent = "没有位置，臣妾做不到呀~\n点击输入框旁的小加号，将您的位置告诉我吧>_<";
 						} else {
@@ -202,6 +264,7 @@ public class CoreService {
 								return responMsg;
 							}
 							
+<<<<<<< HEAD
 							else if( reqContent.equals("话题") ){
 								String locationX = URLEncoder.encode(String.valueOf(locationx), "UTF-8");
 								String locationY = URLEncoder.encode(String.valueOf(locationy), "UTF-8");
@@ -223,6 +286,23 @@ public class CoreService {
 							else if (reqContent.equals("个人中心")) {
 					
 								String responMsg = MessageUtil.rsTopersonnalCenter(fromUserName, toUserName,weixinID, sex, iconURL,locationLabel);
+=======
+
+							else if (reqContent.equals("个人中心")) {
+								String sqlStr = "select * from tb_member where open_id = '"+ fromUserName + "' ";
+								ResultSet rss = DBoprate.stmt.executeQuery(sqlStr);
+								rss.next();
+								int sex = rss.getInt("sex");
+								String weixinID = rss.getString("weixin_id");
+								String locationLabel = rss.getString("location_label");
+								String iconURL = rss.getString("icon_url");
+
+								rss.close();
+
+								ArrayList<ResultSet> resultArr = DBoprate.queryPersonnalCenter(fromUserName, sex);
+
+								String responMsg = MessageUtil.rsTopersonnalCenter(resultArr,fromUserName, toUserName,weixinID, sex, iconURL,locationLabel);
+>>>>>>> remotes/CMwall/master
 
 								return responMsg;
 							}
@@ -236,11 +316,62 @@ public class CoreService {
 							}
 							
 
+<<<<<<< HEAD
 							else {
 
 								if (state == 0) {
 
 									respContent = "回复：\n“偶遇”遇见兴趣相同的Ta\n\n" + "“新鲜事”查看附近说说\n\n" + "“话题”参与附近趣味问答\n\n" + "“反馈”提建议或吐个槽\n\n" + "“个人中心”定制个性资料或查看我的新鲜事" ;
+=======
+							/*
+							else if (reqContent.equals("表白")) {
+								// 将state更新为1
+								sql = "update tb_member set state = 1 where open_id = '"+fromUserName+"'";
+								DBoprate.stmt.execute(sql);
+
+								respContent = "回复图片作为表白封面，若直接回复文字表白内容将使用随机精美封面";
+
+							} else if (reqContent.equals("许愿")) {
+								sql = "select * from tb_member where open_id ='"+fromUserName+"' ";
+								rs = DBoprate.stmt.executeQuery(sql);
+								rs.next();
+								int sex = rs.getInt("sex");
+								if (sex == 1) {
+									respContent = "大叔，许愿神马的还是交给妹纸好了，回复“新鲜事”勾搭附近的许愿妹子，然后帮她们实现愿望吧！";
+								} else {
+									// 将state更新为2
+									sql = "update tb_member set state = 2 where open_id = '"+fromUserName+"'";
+									DBoprate.stmt.execute(sql);
+
+									respContent = "回复图片作为许愿封面，若直接回复文字许愿内容将使用随机精美封面";
+								}
+
+							} else if (reqContent.equals("留言")) {
+								// 将state更新为3
+								sql = "update tb_member set state = 3 where open_id = '"+fromUserName+"'";
+								DBoprate.stmt.execute(sql);
+
+								respContent = "回复图片作为封面，若直接回复文字留言内容将使用随机精美封面";
+							}
+							*/
+
+							// 获取用户的微信数据，同步至厘米墙个人信息
+							else if (reqContent.equals("同步微信")) {
+								String userInfo = GetFromWechat.getUserInfo(MessageUtil.GET_USER_INFO_URL,MessageUtil.TOKEN, fromUserName);
+								respContent = "同步微信" + userInfo;
+							}
+
+							else {
+								sql = "select * from tb_member where open_id ='"+fromUserName+"' ";
+								ResultSet rs2 = DBoprate.stmt.executeQuery(sql);
+								rs2.next();
+								// 获取用户ask for 消息状态
+								int state = rs2.getInt("state");
+
+								if (state == 0) {
+
+									respContent = "回复：\n“新鲜事”查看附近新鲜事\n" + "“个人中心”定制个性资料\n" + "“反馈”提建议或吐个槽";
+>>>>>>> remotes/CMwall/master
 
 								} 
 								else if( state == 4 ){
@@ -253,6 +384,139 @@ public class CoreService {
 									respContent = "反馈已收录，感谢您的建议";
 								}
 								
+<<<<<<< HEAD
+=======
+								rs2.close();
+								
+								/*
+								else if (state == 1) {
+									// 该条消息被认为是表白
+									String openID = fromUserName;
+									String weixinID = rs2.getString("weixin_id");
+									String iconURL = rs2.getString("icon_url");
+									int sex = rs2.getInt("sex");
+									String description = reqContent;
+
+									// 如果为图片表白的描述
+									if (if_imgbiaobai == 1) {
+										sql = " update tb_msg set description = '"+description+ "' where open_id = '"+fromUserName+ "'and type=1 order by msg_id desc limit 1 ";
+										DBoprate.stmt.execute(sql);
+
+										respContent = "表白已收到，可通过附近新鲜事查看~";
+
+										sql = "update tb_member set if_imgbiaobai = 0 where open_id = '"+fromUserName+"'";
+										DBoprate.stmt.execute(sql);
+
+										sql = "update tb_member set state = 0 where open_id = '"+fromUserName+"'";
+										DBoprate.stmt.execute(sql);
+									} else {
+										// 如果表白内容过于短或者为垃圾内容
+										boolean isPureNumber = description.matches("[0-9]+");
+										boolean isisRepeatStr = MessageUtil.isRepeatStr(description);
+
+										if (description.length() < 4 || isPureNumber || isisRepeatStr) {
+											respContent = "不管你是大侠还是软妹，表白也有点诚意嘛，多加几个字试试吧~";
+										} else {
+											int type = 1;
+											double locationX = rs2.getDouble("locationx");
+											double locationY = rs2.getDouble("locationy");
+											sql = "insert into tb_msg (open_id,weixin_id,icon_url,sex,description,type,locationx,locationy) values ('"
+											+openID+"','"+weixinID+"','"+iconURL+"',"+sex+",'"+description+"',"+type+","+locationX+","+locationY+") ";
+											DBoprate.stmt.execute(sql);
+
+											respContent = "表白已收到，可通过附近新鲜事查看~";
+
+											sql = "update tb_member set state = 0 where open_id = '"+fromUserName+"'";
+											DBoprate.stmt.execute(sql);
+										}
+									}
+								} else if (state == 2) {
+									// 该条消息被认为是许愿
+									String openID = fromUserName;
+									String weixinID = rs2.getString("weixin_id");
+									String iconURL = rs2.getString("icon_url");
+									int sex = rs2.getInt("sex");
+									String description = reqContent;
+
+									// 该条文字为图片许愿的描述
+									if (if_imgxinyuan == 1) {
+										sql = " update tb_msg set description = '"+description+"' where open_id = '"+fromUserName+"'and type=2 order by msg_id desc limit 1 ";
+										DBoprate.stmt.execute(sql);
+
+										respContent = "许愿已收到，可通过附近新鲜事查看~";
+
+										sql = "update tb_member set if_imgxinyuan = 0 where open_id = '"+fromUserName+"'";
+										DBoprate.stmt.execute(sql);
+
+										sql = "update tb_member set state = 0 where open_id = '"+ fromUserName + "'";
+										DBoprate.stmt.execute(sql);
+									} else {
+										// 如果表白内容过于短或者为垃圾内容
+										boolean isPureNumber = description.matches("[0-9]+");
+										boolean isisRepeatStr = MessageUtil.isRepeatStr(description);
+
+										if (description.length() < 4 || isPureNumber || isisRepeatStr) {
+											respContent = "妹纸，许愿也有点诚意嘛，那么多汉子看着呢，多加几个字试试吧~";
+										} else {
+											// 文字心愿
+											int type = 2;
+											double locationX = rs2.getDouble("locationx");
+											double locationY = rs2.getDouble("locationy");
+											sql = "insert into tb_msg (open_id,weixin_id,icon_url,description,type,locationx,locationy) values ('"
+											+openID+"','"+ weixinID+ "','"+ iconURL+ "','"+ description+ "',"+ type+ ", "+ locationX+ "," + locationY + ") ";
+											DBoprate.stmt.execute(sql);
+
+											respContent = "许愿已收到，可通过附近新鲜事查看~";
+
+											sql = "update tb_member set state = 0 where open_id = '"+ fromUserName + "'";
+											DBoprate.stmt.execute(sql);
+										}
+									}
+								} else if (state == 3) {
+									// 该条消息被认为是留言
+									String openID = fromUserName;
+									String weixinID = rs2.getString("weixin_id");
+									String iconURL = rs2.getString("icon_url");
+									int sex = rs2.getInt("sex");
+									String description = reqContent;
+
+									// 该条文字为图片留言的描述
+									if (if_imggouda == 1) {
+										sql = " update tb_msg set description = '"+ description+ "' where open_id = '"+ fromUserName+ "'and type=3 order by msg_id desc limit 1 ";
+										DBoprate.stmt.execute(sql);
+
+										respContent = "留言成功，可通过附近新鲜事查看~";
+
+										sql = "update tb_member set if_imggouda = 0 where open_id = '"+ fromUserName + "'";
+										DBoprate.stmt.execute(sql);
+
+										sql = "update tb_member set state = 0 where open_id = '"+ fromUserName + "'";
+										DBoprate.stmt.execute(sql);
+									} else {
+										// 如果勾搭内容过于短或者为垃圾内容
+										boolean isPureNumber = description.matches("[0-9]+");
+										boolean isisRepeatStr = MessageUtil.isRepeatStr(description);
+
+										if (description.length() < 4 || isPureNumber || isisRepeatStr) {
+											respContent = "不管你是大侠还是软妹，求勾搭也有点诚意嘛，多加几个字试试吧~";
+										}
+										// 为文字求勾搭
+										else {
+											int type = 3;
+											double locationX = rs2.getDouble("locationx");
+											double locationY = rs2.getDouble("locationy");
+											sql = "insert into tb_msg (open_id,weixin_id,icon_url,sex,description,type,locationx,locationy) values ('"
+											+ openID+ "','"+ weixinID+ "','"+ iconURL+ "',"+ sex+ ",'"+ description+ "',"+ type+ ","+ locationX+ ","+ locationY + ") ";
+											DBoprate.stmt.execute(sql);
+
+											respContent = "留言成功，可通过附近新鲜事查看~";
+
+											sql = "update tb_member set state = 0 where open_id = '"+ fromUserName + "'";
+											DBoprate.stmt.execute(sql);
+										}
+									}
+								}*/
+>>>>>>> remotes/CMwall/master
 							}
 						}
 					}
@@ -297,7 +561,11 @@ public class CoreService {
 								DBoprate.stmt.execute(sql);
 								respContent = "你是厘米墙的一员啦，今后直接回复图片即可修改头像"
 										+ "\n---------------\n"
+<<<<<<< HEAD
 										+ "请点击输入框旁小加号，将您的位置发送给小厘，参与附近新鲜玩法";
+=======
+										+ "请点击输入框旁小加号，将您的位置发送给小厘吧~";
+>>>>>>> remotes/CMwall/master
 							}
 						}
 					}
@@ -308,6 +576,64 @@ public class CoreService {
 						DBoprate.stmt.execute(sql);
 						respContent = "修改头像成功~";
 						
+<<<<<<< HEAD
+=======
+						/*
+						int state = rs.getInt("state");
+
+						if (state == 1) {
+							String weixinID = rs.getString("weixin_id");
+							String iconURL = rs.getString("icon_url");
+							int sex = rs.getInt("sex");
+							String content = imgUrl;
+							int type = 1;
+							double locationX = rs.getDouble("locationx");
+							double locationY = rs.getDouble("locationy");
+
+							sql = "insert into tb_msg (open_id,weixin_id,icon_url,sex,content,type,locationx,locationy) values ('"
+							+fromUserName+"','"+ weixinID+ "','"+ iconURL+ "',"+ sex+ ",'"+ content+ "',"+ type+ ","+ locationX + "," + locationY + ") ";
+							DBoprate.stmt.execute(sql);
+
+							respContent = "为图片添加一段表白吧~";
+
+							sql = "update tb_member set if_imgbiaobai = 1 where open_id = '"+ fromUserName + "'";
+							DBoprate.stmt.execute(sql);
+						} else if (state == 2) {
+							String weixinID = rs.getString("weixin_id");
+							String iconURL = rs.getString("icon_url");
+							String content = imgUrl;
+							int type = 2;
+							double locationX = rs.getDouble("locationx");
+							double locationY = rs.getDouble("locationy");
+
+							sql = "insert into tb_msg (open_id,weixin_id,icon_url,content,type,locationx,locationy) values ('"
+							+ fromUserName+ "','"+ weixinID+ "','"+ iconURL+ "','"+ content+ "',"+ type+ ", "+ locationX + "," + locationY + ") ";
+							DBoprate.stmt.execute(sql);
+
+							respContent = "添加一段文字许愿吧~";
+
+							sql = "update tb_member set if_imgxinyuan = 1 where open_id = '"+ fromUserName + "'";
+							DBoprate.stmt.execute(sql);
+						} else if (state == 3) {
+							String weixinID = rs.getString("weixin_id");
+							String iconURL = rs.getString("icon_url");
+							int sex = rs.getInt("sex");
+							String content = imgUrl;
+							int type = 3;
+							double locationX = rs.getDouble("locationx");
+							double locationY = rs.getDouble("locationy");
+
+							sql = "insert into tb_msg (open_id,weixin_id,icon_url,sex,content,type,locationx,locationy) values ('"
+							+ fromUserName+ "','"+ weixinID+ "','"+ iconURL+ "',"+ sex+ ",'"+ content+ "',"+ type+ ","+ locationX + "," + locationY + ") ";
+							DBoprate.stmt.execute(sql);
+
+							respContent = "添加一段文字留言吧~";
+
+							sql = "update tb_member set if_imggouda = 1 where open_id = '"+ fromUserName + "'";
+							DBoprate.stmt.execute(sql);
+						}*/ 
+
+>>>>>>> remotes/CMwall/master
 					}
 
 				}
@@ -333,7 +659,11 @@ public class CoreService {
 								+ " , location_label='" + label + "'"
 								+ "where open_id = '" + fromUserName + "' ";
 						DBoprate.stmt.execute(sql);
+<<<<<<< HEAD
 						respContent = "您的位置已更新，回复:\n" + "“偶遇”遇见兴趣相同的Ta\n\n" +"“新鲜事”查看附近说说\n\n" + "“话题”参与附近趣味问答\n\n" + "“反馈”提建议或吐个槽\n\n" + "“个人中心”定制个性资料或查看我的新鲜事";
+=======
+						respContent = "您的位置信息已更新~\n" + "回复：\n“新鲜事”查看附近新鲜事\n" + "“个人中心”定制个性资料\n" + "“反馈”提建议或吐个槽";
+>>>>>>> remotes/CMwall/master
 					} else {
 						respContent = "您好像还没有完成注册噢，赶紧按照提示加入我们吧~";
 					}
@@ -350,7 +680,30 @@ public class CoreService {
 
 				}
 
+<<<<<<< HEAD
 				 
+=======
+				// ////////////////////////////////////////////////// 事件推送 ///////////////////////////////////////////////////////
+				else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {
+					// 事件类型
+					String eventType = requestMap.get("Event");
+					// 订阅
+					if (eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) {
+						respContent = "欢迎加入厘米墙，先按照提示完成简单的注册吧，回复一个昵称~";
+					}
+					// 取消订阅
+					else if (eventType.equals(MessageUtil.EVENT_TYPE_UNSUBSCRIBE)) {
+						String sql1 = "delete from tb_member where open_id = '"+ fromUserName + "'";
+						DBoprate.stmt.execute(sql1);
+						String sql2 = "delete from tb_tempmember where open_id = '"+ fromUserName + "'";
+						DBoprate.stmt.execute(sql2);
+					}
+					// 自定义菜单点击事件
+					else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {
+						// TODO 自定义菜单权没有开放，暂不处理该类消息
+					}
+				} 
+>>>>>>> remotes/CMwall/master
 				
 			} else {
 				// 如果数据库没连接上
@@ -362,9 +715,12 @@ public class CoreService {
 			respMessage = MessageUtil.textMessageToXml(textMessage);
 		} catch (Exception e) {
 			e.printStackTrace();
+<<<<<<< HEAD
 			// 输出错误日志
 			Logger logger = Logger. getLogger("name");
 			logger.log(Level.INFO, "error：\n"+e.getMessage());
+=======
+>>>>>>> remotes/CMwall/master
 		}
 
 		return respMessage;

@@ -25,8 +25,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<%
 		String currentID = (String)request.getParameter("currentID");
+<<<<<<< HEAD
 		String locationx = (String)request.getParameter("locationx");
 		String locationy = (String)request.getParameter("locationy");
+=======
+>>>>>>> remotes/CMwall/master
 	%>
 	
 	<!-- 执行上传文件操作的函数 -->
@@ -38,7 +41,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					imgURL="http://bcs.duapp.com/cmtechnology-wechat-cmwall-files/systemPicSmall%2F"+picRandom+".jpg";
 					
 					// 将imgURL与获取到的输入内容一起插入数据库
+<<<<<<< HEAD
 					var locationLabel = $('#input_locationlabel').val();
+=======
+>>>>>>> remotes/CMwall/master
 					var description =  $.trim( $('#editor1').text() );
 					var typeText = $.trim( $('#select_now').text() );
 					var type;
@@ -50,16 +56,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						type = 3;
 					}
 					
+<<<<<<< HEAD
 					$.post("http://2.cmwechatweb.duapp.com/MyLuanchServlet",{currentID:<%=currentID%> , content:imgURL , description:description , locationLabel:locationLabel , type:type},function(data){
+=======
+					$.post("http://2.cmwechatweb.duapp.com/MyLuanchServlet",{currentID:<%=currentID%> , content:imgURL , description:description , type:type},function(data){
+>>>>>>> remotes/CMwall/master
 						if( data == 'error' ){
 							alert("噢欧，网络不给力");
 						}else{
 							alert("发布成功");
+<<<<<<< HEAD
 							// 返回附近新鲜事并刷新
 							var currentID = document.getElementById('currentID').value;
 							var locationx = document.getElementById('locationx').value;
 							var locationy = document.getElementById('locationy').value;
 							window.location.href="http://2.cmwechatweb.duapp.com/all_waterfall.jsp?locationx="+locationx+"&locationy="+locationy+"&currentID="+currentID+"";
+=======
+							window.history.go(-1);
+>>>>>>> remotes/CMwall/master
 						}
 					});
 					
@@ -89,7 +103,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			              	}
 			               	
 			        		// 将imgURL与获取到的输入内容一起插入数据库
+<<<<<<< HEAD
 			        		var locationLabel = $('#input_locationlabel').val();
+=======
+>>>>>>> remotes/CMwall/master
 							var description =  $.trim( $('#editor1').text() );
 							var typeText = $.trim( $('#select_now').text() );
 							var type;
@@ -100,16 +117,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							}else if( typeText=="留言" ){
 								type = 3;
 							}
+<<<<<<< HEAD
 							$.post("http://2.cmwechatweb.duapp.com/MyLuanchServlet",{currentID:<%=currentID%> , content:imgURL , description:description,locationLabel:locationLabel , type:type},function(data){
+=======
+							$.post("http://2.cmwechatweb.duapp.com/MyLuanchServlet",{currentID:<%=currentID%> , content:imgURL , description:description , type:type},function(data){
+>>>>>>> remotes/CMwall/master
 								if( data == 'error' ){
 									alert("噢欧，网络不给力");
 								}else{
 									alert("发布成功");
+<<<<<<< HEAD
 									// 返回附近新鲜事并刷新
 									var currentID = document.getElementById('currentID').value;
 									var locationx = document.getElementById('locationx').value;
 									var locationy = document.getElementById('locationy').value;
 									window.location.href="http://2.cmwechatweb.duapp.com/all_waterfall.jsp?locationx="+locationx+"&locationy="+locationy+"&currentID="+currentID+"";
+=======
+									window.history.go(-1);
+>>>>>>> remotes/CMwall/master
 								}
 							});
         		
@@ -133,7 +158,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			              	}
 			               	
 			        		// 将imgURL与获取到的输入内容一起插入数据库
+<<<<<<< HEAD
 			        		var locationLabel = $('#input_locationlabel').val();
+=======
+>>>>>>> remotes/CMwall/master
 							var description =  $.trim( $('#editor1').text() );
 							var typeText = $.trim( $('#select_now').text() );
 							var type;
@@ -144,16 +172,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							}else if( typeText=="留言" ){
 								type = 3;
 							}
+<<<<<<< HEAD
 							$.post("http://2.cmwechatweb.duapp.com/MyLuanchServlet",{currentID:<%=currentID%> , content:imgURL , description:description,locationLabel:locationLabel , type:type},function(data){
+=======
+							$.post("http://2.cmwechatweb.duapp.com/MyLuanchServlet",{currentID:<%=currentID%> , content:imgURL , description:description , type:type},function(data){
+>>>>>>> remotes/CMwall/master
 								if( data == 'error' ){
 									alert("噢欧，网络不给力");
 								}else{
 									alert("发布成功");
+<<<<<<< HEAD
 									// 返回附近新鲜事并刷新
 									var currentID = document.getElementById('currentID').value;
 									var locationx = document.getElementById('locationx').value;
 									var locationy = document.getElementById('locationy').value;
 									window.location.href="http://2.cmwechatweb.duapp.com/all_waterfall.jsp?locationx="+locationx+"&locationy="+locationy+"&currentID="+currentID+"";
+=======
+									window.history.go(-1);
+>>>>>>> remotes/CMwall/master
 								}
 							});
 	                    }  
@@ -189,6 +225,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<body style="font-family:'Microsoft YaHei'">
 	
+<<<<<<< HEAD
 		<textarea id='currentID' style='visibility:hidden;display:none' ><%=currentID%></textarea>
 		<textarea id='locationx' style='visibility:hidden;display:none' ><%=locationx%></textarea>
 		<textarea id='locationy' style='visibility:hidden;display:none' ><%=locationy%></textarea>
@@ -200,6 +237,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   	  <div id="content-edit" class="row">
 	   	  	<div class="col-xs-2">
 	   	  		<h3><span class="glyphicon glyphicon-edit btn-lg" style="color:#428bca;float:right"></span></h3>
+=======
+	   <br>
+	
+	   <div class="container">
+	   
+	   	  <div id="content-edit" class="row">
+	   	  	<div class="col-xs-2">
+	   	  		<span class="glyphicon glyphicon-edit btn-lg" style="color:#330099"></span>
+>>>>>>> remotes/CMwall/master
 	   	  	</div>
 	   	  	<div class="col-xs-10">
 	   	  	  <div class="redactor_box">
@@ -213,6 +259,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	               <li class="redactor_separator"></li>
 	               <li><a title="Delete" class="redactor_btn_deleted" data-edit="delete"></a></li>
 	   	  		</ul>
+<<<<<<< HEAD
 	   	  		   <div id="editor1" class="redactor_commentRedactor redactor_editor"  contenteditable="true" dir="ltr">
 	   	  		   <p><br></p></div>
 	   	  		   <textarea id="redactor_content" class="commentRedactor" name="add_comment" style="display: none;" ></textarea></div>
@@ -229,6 +276,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   	   </div>
 	   	   <br>
 	   	   <br>
+=======
+	   	  		   <div id="editor1" class="redactor_commentRedactor redactor_editor" contenteditable="true" dir="ltr">
+	   	  		   <p><br></p></div>
+	   	  		   <textarea id="redactor_content" class="commentRedactor" name="add_comment" style="display: none;"></textarea></div>
+	   	  	 </div>
+	   	   </div>
+	   	   
+	   	   
+	   	   <br><br>
+>>>>>>> remotes/CMwall/master
 	   	   
 	   	   <div id="pic_upgrade" class="row">
 	   	      <div class="col-xs-3"></div>
@@ -239,7 +296,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   	   	  </div>
 	   	   </div>
 	   	   <div class="row">
+<<<<<<< HEAD
 	   	   		<div class="col-xs-12" style="text-align:center"><font color="#8A2BE2" size="1px">*若未选择图片,将使用随机封面</font></div>	 
+=======
+	   	   		<div class="col-xs-12" style="text-align:center"><font color="#8A2BE2" size="1px">*若未选择图片,将使用随机精美封面</font></div>	 
+>>>>>>> remotes/CMwall/master
 	   	   </div>
 	   	   
 	   	   <br>
@@ -274,8 +335,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   	   	  </div>
 	   	   </div>
 	   	   
+<<<<<<< HEAD
 	   	   <br>
 	   	   
+=======
+>>>>>>> remotes/CMwall/master
 	   </div>
 	   
 	   
@@ -290,7 +354,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  $(document).ready(function(){
 		    $('#editor1').wysiwyg();
 		  });
+<<<<<<< HEAD
 	      
+=======
+	      $('.glyphicon').hover(function(){
+	        $(this).css("color","#CC0000");
+	      });
+	      $('.glyphicon').mouseleave(function(){
+	        $(this).css("color","#666666");
+	      });
+>>>>>>> remotes/CMwall/master
 	   </script>
 	</body>
 </html>

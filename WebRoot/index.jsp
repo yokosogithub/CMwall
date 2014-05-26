@@ -10,7 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>厘米墙 - 那些年的青涩与感动</title>
+<<<<<<< HEAD
     <meta property="wb:webmaster" content="e6204362fb8b06a9" />
+=======
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+>>>>>>> remotes/CMwall/master
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">

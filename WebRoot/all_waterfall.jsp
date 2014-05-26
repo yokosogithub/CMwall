@@ -47,12 +47,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<body style="font-family:'Microsoft YaHei'">
 	    <div>
 	        <img id='title_img' alt="title" width=100%  src="img/all_waterfall_title.jpg">
+<<<<<<< HEAD
 	        <button type="btn" id="my_luanch_btn" class="btn btn-warning" style="position:absolute;left:72%;top:0.3%;z-index:1">+我要发布</button>
 		</div>
 	
 		<textarea id='currentID' style='visibility:hidden;display:none' ><%=currentID%></textarea>
 		<textarea id='locationx' style='visibility:hidden;display:none' ><%=locationx%></textarea>
 		<textarea id='locationy' style='visibility:hidden;display:none' ><%=locationy%></textarea>
+=======
+	        <button type="btn" id="my_luanch_btn" class="btn btn-warning" style="position:absolute;left:72%;top:0.3%;z-index:1">我要发布</button>
+		</div>
+	
+		<textarea id='currentID' style='visibility:hidden;display:none' ><%=currentID%></textarea>
+>>>>>>> remotes/CMwall/master
 		
 		<div class="container">
 				<div id="freewall" class="free-wall" style="margin-top:15px"></div>
@@ -76,10 +83,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		// my_luanch_btn点击事件
 		$('#my_luanch_btn').click(function(){
 			var currentID = document.getElementById('currentID').value;
+<<<<<<< HEAD
 			var locationx = document.getElementById('locationx').value;
 			var locationy = document.getElementById('locationy').value;
 			
 			window.location.href="http://2.cmwechatweb.duapp.com/my_luanch.jsp?currentID="+currentID+"&locationx="+locationx+"&locationy="+locationy+"";
+=======
+			window.location.href="http://2.cmwechatweb.duapp.com/my_luanch.jsp?currentID="+currentID+"";
+>>>>>>> remotes/CMwall/master
 		});
 		
 		
@@ -126,6 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  		  
 			  		  // 截取图片描述
 			  		  var description;
+<<<<<<< HEAD
 			  		  if( item.description.replace(/[^\x00-\xff]/g,"a").length > 50 ){
 			  		  	description = item.description.substr(0,50) + "...";
 			  		  }else{
@@ -137,6 +149,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  		  	locationLabel = item.locationLabel.substr(0,8) + "..";
 			  		  }else{
 			  		  	locationLabel = item.locationLabel;
+=======
+			  		  
+			  		  if( item.description.replace(/[^\x00-\xff]/g,"aa").length > 60 ){
+			  		  	description = item.description.substr(0,60) + "...";
+			  		  }else{
+			  		  	description = item.description;
+>>>>>>> remotes/CMwall/master
 			  		  }
 			  		  
 		
@@ -145,6 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  "color:#FFFFFFF'>"+
 					 "<div id='cell_inside"+idx+"'>"+
 					 "<div class='row' style='padding-top:0px'>"+
+<<<<<<< HEAD
 		              	"<div class='col-xs-12' style='padding-right:0px'>"+
 							"<h3 style='margin:0px;text-shadow:none;display:inline'><span class='glyphicon glyphicon-map-marker' style='color:#9932CC'></span>&nbsp;"+item.distance+ "<small>KM&nbsp;&nbsp;&nbsp;&nbsp;<font style='color:#9932CC'>"+msgType+"</font></small></h3>"+
 					  	"</div>"+
@@ -152,6 +172,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						"<span class=\"label label-primary\">"+locationLabel+"</span>"+
 						"</div>"+
 					  	"<div class='col-xs-12' style='margin-top:0.7em'>"+
+=======
+		              	"<div class='col-xs-12'>"+
+							"<h3 style='margin:0px;text-shadow:none'><span class='glyphicon glyphicon-map-marker' style='color:#9932CC'></span>&nbsp;"+item.distance+ "<small>KM "+msgType+"</small></h3>"+
+					  	"</div>"+
+					  	"<div class='col-xs-12'>"+
+>>>>>>> remotes/CMwall/master
 					  	    "<small><span class='glyphicon glyphicon-comment' style='text-shadow:none;padding-left:3px;color:#66CCFF;float:right' ><a style='color:#AAAAAA;font-size:0.8em'>"+item.replyCount+"</a></span><span class='glyphicon glyphicon-heart' style='text-shadow:none;float:right;padding-right:3px;color:#FFCCFF' font ><a style='color:#AAAAAA;font-size:0.8em'>"+item.zanCount+"</a></span></small>"+
 					  	"</div>"+
 		             "</div>"+
@@ -244,12 +270,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  		    
 			  		    // 截取图片描述
 			  		    var description;
+<<<<<<< HEAD
 			  		    if( item.description.replace(/[^\x00-\xff]/g,"a").length > 50 ){
 			  		  		description = item.description.substr(0,50) + "...";
+=======
+			  		    if( item.description.replace(/[^\x00-\xff]/g,"aa").length > 60 ){
+			  		  		description = item.description.substr(0,60) + "...";
+>>>>>>> remotes/CMwall/master
 			  		    }else{
 			  		  		description = item.description;
 			  		    }
 			  		    
+<<<<<<< HEAD
 			  		    var locationLabel;
 			  		    if( item.locationLabel.replace(/[^\x00-\xff]/g,"a").length > 8 ){
 			  		  		locationLabel = item.locationLabel.substr(0,8) + "..";
@@ -257,11 +289,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  		  		locationLabel = item.locationLabel;
 			  		    }
 			  		    
+=======
+>>>>>>> remotes/CMwall/master
 			  		    var temp =""+
 						"<div class='cell' id='mycell"+idx+"' style='color:#000000;padding:10px 10px 10px 10px;border: 2px solid #DDD;border-radius: 4px;width:180px;height:450px;background-"+    
 						  "color:#FFFFFFF'>"+
 						 "<div id='cell_inside"+idx+"'>"+
 						 "<div class='row' style='padding-top:0px'>"+
+<<<<<<< HEAD
 			              	"<div class='col-xs-12' style='padding-right:0px'>"+
 								"<h3 style='margin:0px;text-shadow:none;display:inline'><span class='glyphicon glyphicon-map-marker' style='color:#9932CC'></span>&nbsp;"+item.distance+"<small>KM&nbsp;&nbsp;&nbsp;&nbsp;<font style='color:#9932CC'>"+msgType+"</font></small> </h3>"+
 						  	"</div>"+
@@ -269,6 +304,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  	"<span class=\"label label-primary\">"+locationLabel+"</span>"+
 						  	"</div>"+
 						  	"<div class='col-xs-12' style='margin-top:0.7em'>"+
+=======
+			              	"<div class='col-xs-12'>"+
+								"<h3 style='margin:0px;text-shadow:none'><span class='glyphicon glyphicon-map-marker' style='color:#9932CC'></span>&nbsp;"+item.distance+"<small>KM "+msgType+"</small></h3>"+
+						  	"</div>"+
+						  	"<div class='col-xs-12'>"+
+>>>>>>> remotes/CMwall/master
 						  	    "<small><span class='glyphicon glyphicon-comment' style='text-shadow:none;padding-left:3px;color:#66CCFF;float:right' ><a style='color:#AAAAAA;font-size:0.8em'>"+item.replyCount+"</a></span><span class='glyphicon glyphicon-heart' style='text-shadow:none;float:right;padding-right:3px;color:#FFCCFF' font ><a style='color:#AAAAAA;font-size:0.8em'>"+item.zanCount+"</a></span></small>"+
 						  	"</div>"+
 			             "</div>"+

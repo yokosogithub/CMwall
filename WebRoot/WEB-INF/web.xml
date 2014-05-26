@@ -14,6 +14,11 @@
 		<url-pattern>/servlet/MainServlet</url-pattern>
 	</servlet-mapping>
 	
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> remotes/CMwall/master
 	
 	<servlet>
 		<servlet-name>SetFreshTime2ZeroServlet</servlet-name>
@@ -26,6 +31,19 @@
 	
 	
 	<servlet>
+<<<<<<< HEAD
+=======
+		<servlet-name>MyLaunchServlet</servlet-name>
+		<servlet-class>org.servlet.MyLaunchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyLaunchServlet</servlet-name>
+		<url-pattern>MyLaunchServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+>>>>>>> remotes/CMwall/master
 		<servlet-name>DianZanServlet</servlet-name>
 		<servlet-class>org.servlet.DianZanServlet</servlet-class>
 	</servlet>
@@ -113,6 +131,7 @@
 		<url-pattern>MyLuanchServlet</url-pattern>
 	</servlet-mapping>
 	
+<<<<<<< HEAD
 	<servlet>
 		<servlet-name>QueryMyMsgServlet</servlet-name>
 		<servlet-class>org.servlet.QueryMyMsgServlet</servlet-class>
@@ -184,6 +203,8 @@
 		<servlet-name>AddTopicReplyServlet</servlet-name>
 		<url-pattern>AddTopicReplyServlet</url-pattern>
 	</servlet-mapping>
+=======
+>>>>>>> remotes/CMwall/master
 
 	
 	<servlet>

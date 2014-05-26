@@ -9,6 +9,7 @@ package org.dao;
 public class UserInfo {
 	private String iconURL = null;
 	private String weixinID = null;
+<<<<<<< HEAD
 	private int hobby;
 	private String school = null;
 	private String profession = null;
@@ -37,6 +38,13 @@ public class UserInfo {
 	public void setLovestate(String lovestate) {
 		this.lovestate = lovestate;
 	}
+=======
+	private String hobby = null;
+	private String school = null;
+	private String shuoshuo = null;
+	private String weixinNum = null;
+	private int sex = 3;
+>>>>>>> remotes/CMwall/master
 	public String getIconURL() {
 		return iconURL;
 	}
@@ -49,10 +57,17 @@ public class UserInfo {
 	public void setWeixinID(String weixinID) {
 		this.weixinID = weixinID;
 	}
+<<<<<<< HEAD
 	public int getHobby() {
 		return hobby;
 	}
 	public void setHobby(int hobby) {
+=======
+	public String getHobby() {
+		return hobby;
+	}
+	public void setHobby(String hobby) {
+>>>>>>> remotes/CMwall/master
 		this.hobby = hobby;
 	}
 	public String getSchool() {

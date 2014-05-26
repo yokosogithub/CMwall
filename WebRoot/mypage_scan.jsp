@@ -43,18 +43,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        	  	    </div>
        	  	 	<div class="row">
        	  	 		<div class="col-xs-12" style="margin-top:0.6em">
+<<<<<<< HEAD
 						<h4 style="color:#9FB6CD"><img id='img_sexicon' src='' style='width:1em;height:1em'></img>&nbsp;&nbsp;<span id="text_nickname"></span></input></h4>	 
+=======
+						<h4  style="color:#9FB6CD"><span id="sex_icon" class="glyphicon glyphicon-user" style="color:#d9534f"></span>&nbsp;&nbsp;<span id="text_nickname"></span></input></h4>	 
+>>>>>>> remotes/CMwall/master
                 	</div>	
        	  	 	</div> 
        	  	</header>
 			<section style="margin-top:2em">
 				<div class="row" id="wantTo">
 					<div class="col-xs-6">
+<<<<<<< HEAD
 					  	<h4 style="text-align:right" class="yahei_font"><span class="label label-danger"><span  class="glyphicon glyphicon-heart"></span>&nbsp;想和Ta</span></h4>
 				 	</div>
 				 	<div class="col-xs-6">
 				 		<div class="btn-group" style="float:left">
 						  <h3 style="margin-top:0.25em"><span id="text_hobby" style='color:#66CCFF'>没想好噢</span></h3>
+=======
+					  	<h4 style="text-align:right"  class="yahei_font"><span class="label label-danger"><span  class="glyphicon glyphicon-heart"></span>&nbsp;想和Ta</span></h4>
+				 	</div>
+				 	<div class="col-xs-6">
+				 		<div class="btn-group" style="float:left">
+						  <h3 style="margin-top:0.25em"><span id="text_hobby" class="label label-primary"></span></h3>
+>>>>>>> remotes/CMwall/master
 						</div>
 				 	</div>
 				</div>
@@ -62,6 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				    <div class="col-xs-1"></div>
 					<div class="col-xs-10">
 						<div class="input-group">
+<<<<<<< HEAD
 						  <span id='school_span' class="input-group-addon" style="color:#d9534f"><img id='img_school' src='' style='width:1em;height:1em'></img> 学校</span>
 						  <h4 id="input_school" class="form-control"></h4>
 						</div>
@@ -88,6 +101,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 						<div class="input-group" style="margin-top:1em">
 							<span id='weixinnum_span' class="input-group-addon" style="color:#d9534f">微信号</span>
+=======
+						  <span class="input-group-addon" style="color:#d9534f">学校<span class="glyphicon glyphicon-book"></span></span>
+						  <h4 id="input_school" class="form-control"></h4>
+						</div>
+						<div class="input-group" style="margin-top:1em">
+							<span class="input-group-addon" style="color:#d9534f">说说<span class="glyphicon glyphicon-comment"></span></span>
+							<h4 id="input_shuoshuo" class="form-control"></h4>
+						</div>
+						<div class="input-group" style="margin-top:1em">
+							<span class="input-group-addon" style="color:#d9534f">微信号</span>
+>>>>>>> remotes/CMwall/master
 							<h4 id="input_weixinNum" class="form-control"></h4>
 						</div>
 					</div>
@@ -99,9 +123,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<button id="btn_back" type="button" class="btn btn-warning" style="float:right">返回</button>
 				</div> 
 				<div class="col-xs-6">
+<<<<<<< HEAD
 					<button id="btn_edit" type="button" class="btn btn-success" style="float:left">去修改>></button>
 				</div>
 			</footer><br>
+=======
+					<button id="btn_edit" type="button" class="btn btn-success" style="float:left">修改</button>
+				</div>
+			</footer>
+>>>>>>> remotes/CMwall/master
        	  </div>
        </div>
        
@@ -153,6 +183,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					alert("获取资料失败");
 				}else{
 					$.each(data,function(idx,item){
+<<<<<<< HEAD
 						iconURL = item.iconURL;
 						$('#img_icon').attr("src",iconURL);
 						document.getElementById('text_nickname').innerHTML = item.weixinID;
@@ -161,6 +192,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						document.getElementById('input_grade').innerHTML = item.grade;
 						document.getElementById('input_shuoshuo').innerHTML = item.shuoshuo;
 						document.getElementById('input_lovestate').innerHTML = item.lovestate;
+=======
+						iconURL = item.iconURL
+						$('#img_icon').attr("src",iconURL);
+						document.getElementById('text_nickname').innerHTML = item.weixinID;
+						document.getElementById('input_school').innerHTML = item.school;
+						document.getElementById('input_shuoshuo').innerHTML = item.shuoshuo;
+>>>>>>> remotes/CMwall/master
 						document.getElementById('input_weixinNum').innerHTML = item.weixinNum;
 						var textHobby = "没想好噢";
 						if( item.hobby == "0" ){
@@ -170,6 +208,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						}else if( item.hobby == "2" ){
 							textHobby = "吃美食";
 						}else if( item.hobby == "3" ){
+<<<<<<< HEAD
 							textHobby = "闲聊";
 						}else if( item.hobby == "4" ){
 							textHobby = "逛街";
@@ -208,6 +247,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							document.getElementById("img_shuoshuo").src='img/glyphicons_244_conversation_0.png';
 							document.getElementById("img_lovestate").src='img/glyphicons_022_fire_0.png';
 						}
+=======
+							textHobby = "逛街";
+						}else if( item.hobby == "4" ){
+							textHobby = "上自习";
+						}else if( item.hobby == "5" ){
+							textHobby = "约会";
+						}
+						document.getElementById('text_hobby').innerHTML = textHobby;
+						var sex_color;
+						if( item.sex == "1" ){
+							sex_color = "#66CCFF";
+						}else{
+							sex_color = "#FFCCFF";
+						}
+						document.getElementById('sex_icon').style.color = sex_color;
+>>>>>>> remotes/CMwall/master
 					});
 				}
 			});

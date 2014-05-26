@@ -15,18 +15,25 @@ public class Msg {
 	private int type;
 	private double locationX;
 	private double locationY;
+<<<<<<< HEAD
 	private String locationLabel;
+=======
+>>>>>>> remotes/CMwall/master
 	private int replyCount;
 	private int zanCount;
 	private String distance;
 	
+<<<<<<< HEAD
 	
+=======
+>>>>>>> remotes/CMwall/master
 	public void distanceCalc(double locationx, double locationy) {
 		int intDistance = (int) DistanceCalculate.getDistance(this.locationX,
 				this.locationY, locationx, locationy);
 		distance = MessageUtil.simpleDistance2(intDistance);
 	}
 	
+<<<<<<< HEAD
 	public String getLocationLabel() {
 		return locationLabel;
 	}
@@ -36,6 +43,8 @@ public class Msg {
 		this.locationLabel = locationLabel;
 	}
 	
+=======
+>>>>>>> remotes/CMwall/master
 	
 	public int getMsgID() {
 		return msgID;

@@ -69,4 +69,41 @@ public class DBoprate {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	public static ArrayList<ResultSet> queryPersonnalCenter(String open_id,
+			int sex) {
+		ResultSet biaobaiRs = null;
+		ResultSet xinyuanRs = null;
+		ResultSet goudaRs = null;
+		ArrayList<ResultSet> resultArr = new ArrayList<ResultSet>();
+
+		try {
+			String sqlStr = "select * from tb_biaobai where open_id = '"
+					+ open_id + "' order by create_time desc";
+			biaobaiRs = stmt.executeQuery(sqlStr);
+
+			// 如果为女才查询心愿表
+			if (sex == 0) {
+				sqlStr = " select * from tb_xinyuan where open_id = '"
+						+ open_id + "' order by create_time desc";
+				xinyuanRs = stmt.executeQuery(sqlStr);
+			}
+
+			sqlStr = " select * from tb_gouda where open_id = '" + open_id
+					+ "' order by create_time desc";
+			goudaRs = stmt.executeQuery(sqlStr);
+
+			resultArr.add(biaobaiRs);
+			resultArr.add(xinyuanRs);
+			resultArr.add(goudaRs);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return resultArr;
+	}
+
+>>>>>>> remotes/CMwall/master
 }

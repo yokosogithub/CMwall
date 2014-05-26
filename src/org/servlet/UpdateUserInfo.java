@@ -25,10 +25,14 @@ public class UpdateUserInfo extends HttpServlet {
 		String weixinID = request.getParameter("weixinID");
 		int hobby = Integer.valueOf(request.getParameter("hobby"));
 		String school = request.getParameter("school");
+<<<<<<< HEAD
 		String profession = request.getParameter("profession");
 		String grade = request.getParameter("grade");
 		String shuoshuo = request.getParameter("shuoshuo");
 		String lovestate = request.getParameter("lovestate");
+=======
+		String shuoshuo = request.getParameter("shuoshuo");
+>>>>>>> remotes/CMwall/master
 		String weixinNum = request.getParameter("weixinNum");
 		
 		// 连接数据库
@@ -37,7 +41,11 @@ public class UpdateUserInfo extends HttpServlet {
 		connection = jspConnectDB.connecDB(request);
 		
 		try{
+<<<<<<< HEAD
 			String sql = "update tb_member set weixin_id='"+weixinID+"', hobby="+hobby+", school='"+school+"', profession='"+profession+"', grade='"+grade+"', shuoshuo='"+shuoshuo+"', love_state='"+lovestate+"', weixin_num='"+weixinNum+"' where open_id='"+currentID+"'";
+=======
+			String sql = "update tb_member set weixin_id='"+weixinID+"', hobby="+hobby+", school='"+school+"', shuoshuo='"+shuoshuo+"', weixin_num='"+weixinNum+"' where open_id='"+currentID+"'";
+>>>>>>> remotes/CMwall/master
 			Statement stm = connection.createStatement();
 			stm.execute(sql);
 			
